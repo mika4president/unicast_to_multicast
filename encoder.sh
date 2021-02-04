@@ -23,6 +23,8 @@ echo "Launching $input1 on $output1" >> log.txt;
 ffmpeg -i $input1  -vcodec copy -vb 150000 -g 60 -vprofile baseline -level 2.1 -acodec aac -ab 64000 -ar 48000 -ac 2 -vbsf h264_mp4toannexb -strict experimental -f mpegts $output1 >>stream1.txt 2>&1  &
 echo "PID:"  $!
 echo " PID: $!  " >> log.txt
+./controle.sh $! &
+
 sleep 1
 
 #echo -e $COL_GREEN "Launching $input2 on $output2" $COL_RESET
