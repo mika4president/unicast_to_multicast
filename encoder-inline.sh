@@ -23,10 +23,6 @@ if [ "$EUID" -ne 0 ]
     ffmpeg -i $input1  -vcodec copy -vb 150000 -g 60 -vprofile baseline -level 2.1 -acodec aac -ab 64000 -ar 48000 -ac 2 -vbsf h264_mp4toannexb -strict experimental -f mpegts $output1 >>stream1.txt 2>&1  &
     echo "PID:"  $!
     echo " PID: $!  " >> log.txt
-    
-    if [ $3 == 'AUTORELAUNCH' ] ; then 
-      ./controle.sh $! &
-    fi
 
   exit
 fi
