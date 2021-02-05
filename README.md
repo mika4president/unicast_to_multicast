@@ -9,6 +9,6 @@ Voorbeeld inline gebruik:
 1e parameter is de bron, 2e is de output
 
 
-*Cronjob instellen:*
+*Cronjob log opschonen elke dag om 0900u:*
 
-0 * * * * echo " `date -u` Log opgeschoond! " > /home/pi/log.txt
+0 9 * * * echo " date -u Log opgeschoond! " > /home/pi/log.txt
