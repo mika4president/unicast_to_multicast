@@ -12,3 +12,7 @@ Voorbeeld inline gebruik:
 *Cronjob log opschonen elke dag om 0900u:*
 
 0 9 * * * echo " date -u Log opgeschoond! " > /home/pi/log.txt
+
+
+We kunnen zelfs vanaf de PI de gegenereerde UDP weer oproepen met omxplayer!
+```omxplayer udp://288.0.0.0:1234?pkt_size=1316```
