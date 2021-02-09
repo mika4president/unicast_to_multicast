@@ -17,7 +17,7 @@ while true; do
   if [ $r -ne 0 ];then
   #if [ $r -eq 0 ]; then
     echo -e $COL_RED "pid is currently no longer running" $COL_RESET
-    ./encoder.sh
+    /home/pi/encoder.sh
     break
   fi
 done
