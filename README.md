@@ -6,7 +6,8 @@ Bash script that uses FFMPEG to convert RTSP stream to UDP
 
 ### Installatie
 SD-kaart inrichten:
-```sudo dd bs=1m if=2021-01-11-raspios-buster-armhf-full.img of=/dev/rdisk2 (waarbij SD-card disk2 moet zijn!!! En je deze gedeactiveerd hebt!)```
+```sudo dd bs=1m if=2021-01-11-raspios-buster-armhf-full.img of=/dev/rdisk2```
+- ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) waarbij SD-card disk2 moet zijn!!! En je deze gedeactiveerd hebt! 
 
 ### FFMPEG
 ```
