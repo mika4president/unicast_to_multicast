@@ -1,4 +1,4 @@
-# h1 unicast_to_multicast
+h1 unicast_to_multicast
 Bash script that uses FFMPEG to convert RTSP stream to UDP
 
 
