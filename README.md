@@ -16,7 +16,7 @@ SD-kaart inrichten:
 sudo apt update
 sudo apt install snapd
 sudo reboot
-sudo snap install ffmpeg
+sudo snap install ffmpeg --classic
 ```
 
 ### Netwerk
