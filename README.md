@@ -1,6 +1,18 @@
-# unicast_to_multicast
+# h1 unicast_to_multicast
 Bash script that uses FFMPEG to convert RTSP stream to UDP
 
+
+
+
+# Installatie
+SD-kaart inrichten:
+sudo dd bs=1m if=2021-01-11-raspios-buster-armhf-full.img of=/dev/rdisk2 (waarbij SD-card disk2 moet zijn!!! En je deze gedeactiveerd hebt!)
+
+# FFMPEG:
+sudo apt update
+sudo apt install snapd
+sudo reboot
+sudo snap install ffmpeg
 
 
 Voorbeeld inline gebruik: 
