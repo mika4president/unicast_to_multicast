@@ -30,6 +30,7 @@ address 192.168.100.145
 netmask 255.255.255.0
 gateway 192.168.100.1
 ```
+ifconfig eth0 192.168.100.145/24  #tijdelijke, enige werkende voor nu
 ----
 
 Voorbeeld inline gebruik: 
