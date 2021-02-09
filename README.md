@@ -19,7 +19,7 @@ sudo reboot
 sudo snap install ffmpeg --classic
 ```
 
-### Netwerk
+### Netwerk /etc/network/interfaces
 ```
 # The loopback network interface
 auto lo
