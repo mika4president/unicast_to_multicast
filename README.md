@@ -52,7 +52,7 @@ Voorbeeld inline gebruik:
 ```@reboot sleep 60 && sudo bash /home/pi/snapshotv2.sh```
 
 We kunnen zelfs vanaf de PI de gegenereerde UDP weer oproepen met omxplayer!
-```@reboot sleep 60 && omxplayer udp://288.0.0.0:1234?pkt_size=1316```
+```@reboot sleep 10 && omxplayer udp://224.0.0.0:1234```
 
 
 ### Splash boot image:
