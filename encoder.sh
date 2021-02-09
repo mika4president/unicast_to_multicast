@@ -13,26 +13,22 @@ COL_CYAN=$ESC_SEQ"36;01m"
 if [ "$EUID" -ne 0 ]
   then echo "Please run as root"
   else
-    echo " `date -u` script gestart! " > log.txt
+    echo " `date -u` script gestart! " > /home/pi/log.txt
 
     input1='rtsp://admin:Camera123$@192.168.100.101:554/1/stream1/Profile1'
     output1='udp://224.0.0.0:1234?pkt_size=1316'
 
-    input2='rtsp://admin:Camera123$@192.168.100.102:554/1/stream1/Profile2'
-    output2='udp://224.0.1.0:1234?pkt_size=1316'
 
     echo -e $COL_GREEN  "Launching $input1 on $output1" $COL_RESET
-    echo "Launching $input1 on $output1" >> log.txt;
-    ffmpeg -i $input1  -vcodec copy -vb 150000 -g 60 -vprofile baseline -level 2.1 -acodec aac -ab 64000 -ar 48000 -ac 2 -vbsf h264_mp4toannexb -strict experimental -f mpegts $output1 >>stream1.txt 2>&1  &
+    echo "Launching $input1 on $output1" >> /home/pi/log.txt;
+    ffmpeg -i $input1 -timeout 1  -vcodec copy -vb 150000 -g 60 -vprofile baseline -level 2.1 -acodec aac -ab 64000 -ar 48000 -ac 2 -vbsf h264_mp4toannexb -strict experimental -f mpegts $output1 >>stream1.txt 2>&1  &
     echo "PID:"  $!
-    echo " PID: $!  " >> log.txt
+    echo " PID: $!  " >> /home/pi/log.txt
     /home/pi/controle.sh $! &
 
     sleep 1
 
-    #echo -e $COL_GREEN "Launching $input2 on $output2" $COL_RESET
-    #ffmpeg -i $input2  -vcodec copy -vb 150000 -g 60 -vprofile baseline -level 2.1 -acodec aac -ab 64000 -ar 48000 -ac 2 -vbsf h264_mp4toannexb -strict experimental -f mpegts $output2  &
-    #echo "PID:"  $!
+
   exit
 fi
 
