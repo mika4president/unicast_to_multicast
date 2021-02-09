@@ -1,14 +1,14 @@
-h1 unicast_to_multicast
+# unicast_to_multicast
 Bash script that uses FFMPEG to convert RTSP stream to UDP
 
 
 
 
-# Installatie
+### Installatie
 SD-kaart inrichten:
 sudo dd bs=1m if=2021-01-11-raspios-buster-armhf-full.img of=/dev/rdisk2 (waarbij SD-card disk2 moet zijn!!! En je deze gedeactiveerd hebt!)
 
-# FFMPEG
+### FFMPEG
 ```
 sudo apt update
 sudo apt install snapd
@@ -16,8 +16,8 @@ sudo reboot
 sudo snap install ffmpeg
 ```
 
-#Netwerk
-
+### Netwerk
+```
 # The loopback network interface
 auto lo
 iface lo inet loopback
@@ -26,6 +26,7 @@ iface eth0 inet static
 address 192.168.100.145
 netmask 255.255.255.0
 gateway 192.168.100.1
+```
 
 Voorbeeld inline gebruik: 
 ```./encoder-inline.sh 'rtsp://admin:Camera123$@192.168.100.101:554/1/stream1/Profile1' 'udp://288.0.0.0:1234?pkt_size=1316' 'AUTORELAUNCH'```
