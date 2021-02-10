@@ -40,6 +40,10 @@ Voorbeeld inline gebruik:
 
 ----
 
+### Apache (makkelijk ophalen gemaakte snapshots indien nodig)
+```sudo apt install apache2 -y```
+
+
 ### Cron 
 
 *Cronjob log opschonen elke dag om 0900u:*
