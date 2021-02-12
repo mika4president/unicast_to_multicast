@@ -11,6 +11,9 @@ SD-kaart inrichten:
 
 ```sudo dd bs=1m if=2021-01-11-raspios-buster-armhf-full.img of=/dev/rdisk2```
 
+Indien /home/es/killswitch.txt de waarde 1 bevat, wordt encoder.sh gestart, maar doet niks.
+
+
 ### FFMPEG
 ```
 sudo apt update
