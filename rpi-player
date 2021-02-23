@@ -1,0 +1,36 @@
+my_array[1]=udp://239.192.8.50:5000;
+my_array[2]=udp://239.192.8.51:5000;
+my_array[3]=udp://239.192.8.52:5000;
+my_array[4]=udp://239.192.8.52:5000;
+my_array[5]=udp://239.192.8.52:5000;
+
+#debug
+#for i in "${my_array[@]}"; do echo "$i"; done
+#echo ${my_array[0]};
+#echo ${my_array[1]};
+
+teller=0;
+maxaantal=5;
+
+while true; do
+    read -rsn1 input
+    if [ "$input" = "a" ];
+      then
+        if [ "$teller" -ge "$maxaantal" ]; then
+	 teller=1;
+        else
+          ((teller=teller+1));
+      fi
+    echo "$teller";
+    echo ${my_array[$teller]};
+    elif [ "$input" = "b" ];then
+          ((teller=teller-1));
+          if [ "$teller" -lt 1 ]; then
+	     #echo "kleiner dan 1, moet 0 zijn dus, we gaan naar einde array!!";
+	     teller=$maxaantal;
+	  fi
+    echo "$teller";
+    echo ${my_array[$teller]};
+    fi
+ done
+done
