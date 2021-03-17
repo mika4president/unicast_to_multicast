@@ -64,3 +64,11 @@ We kunnen zelfs vanaf de PI de gegenereerde UDP weer oproepen met omxplayer!
 
 ### Splash boot image:
 https://www.raspberrypi.org/forums/viewtopic.php?t=162629
+
+
+### Create VOD HLS
+ffmpeg -i christmasmarkets.ts -c copy -f hls -hls_time 0 -hls_playlist_type vod /var/www/html/vod/index.m3u8
+
+MP4 KAN NIET ME BOVENSTAANDE, DAN MOET WE DAAR EERST EEN TS VAN MAKEN OF  DIRECT:
+mkdir /var/www/html/vod/wearegoingtonbullrun/ && 
+ffmpeg -i /home/es/WeAreGoingOnBullrun.mp4  -f hls -hls_time 0 -hls_playlist_type vod /var/www/html/vod/wearegoingtonbullrun/index.m3u8
