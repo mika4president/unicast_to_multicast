@@ -72,3 +72,8 @@ ffmpeg -i christmasmarkets.ts -c copy -f hls -hls_time 0 -hls_playlist_type vod
 MP4 KAN NIET ME BOVENSTAANDE, DAN MOET WE DAAR EERST EEN TS VAN MAKEN OF  DIRECT:
 mkdir /var/www/html/vod/wearegoingtonbullrun/ && 
 ffmpeg -i /home/es/WeAreGoingOnBullrun.mp4  -f hls -hls_time 0 -hls_playlist_type vod /var/www/html/vod/wearegoingtonbullrun/index.m3u8
+
+
+### UDP TO HLS:
+https://github.com/arut/nginx-rtmp-module/issues/1600 states:
+        exec_static /usr/local/bin/./ffmpeg -i udp://@233.1.15.7:1234 -preset ultrafast -profile:v main -level 4.0 -c:v libx264 -vf yadif=0:-1:0 -c:a aac -f flv rtmp://127.0.0.1/cam1/stream;
