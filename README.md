@@ -67,7 +67,14 @@ https://www.raspberrypi.org/forums/viewtopic.php?t=162629
 
 
 ### Create VOD HLS
+```
 ffmpeg -i christmasmarkets.ts -c copy -f hls -hls_time 0 -hls_playlist_type vod /var/www/html/vod/index.m3u8
+```
+
+### CREATE HLS FROM UDP 
+```
+ffmpeg -i udp://@239.192.0.190:5000 -map 0:0 -map 0:2  -f hls -hls_time 2 -hls_list_size 5 -vcodec copy -acodec copy browser.m3u8
+```
 
 MP4 KAN NIET ME BOVENSTAANDE, DAN MOET WE DAAR EERST EEN TS VAN MAKEN OF  DIRECT:
 mkdir /var/www/html/vod/wearegoingtonbullrun/ && 
