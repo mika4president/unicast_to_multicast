@@ -84,3 +84,11 @@ ffmpeg -i /home/es/WeAreGoingOnBullrun.mp4  -f hls -hls_time 0 -hls_playlist_typ
 ### UDP TO HLS:
 https://github.com/arut/nginx-rtmp-module/issues/1600 states:
         exec_static /usr/local/bin/./ffmpeg -i udp://@233.1.15.7:1234 -preset ultrafast -profile:v main -level 4.0 -c:v libx264 -vf yadif=0:-1:0 -c:a aac -f flv rtmp://127.0.0.1/cam1/stream;
+        
+        
+## Record/Capture HLS for fake liveTV 
+##HLS → mkv (600s = 10 min)
+ffmpeg -i {{HLS-NPO1-URL}} -t 600 -c copy {{npo1.mkv}}
+
+##Recreate HLS from that recording
+ffmpeg -i npo1.mkv -c copy -f hls -hls_time 0 -hls_playlist_type vod /var/www/html/live/recordings/npo1.m3u8
