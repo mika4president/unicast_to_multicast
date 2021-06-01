@@ -91,4 +91,4 @@ https://github.com/arut/nginx-rtmp-module/issues/1600 states:
 ffmpeg -i {{HLS-NPO1-URL}} -t 600 -c copy {{npo1.mkv}}
 
 ##Recreate HLS from that recording
-ffmpeg -i npo1.mkv -c copy -f hls -hls_time 0 -hls_playlist_type vod /var/www/html/live/recordings/npo1.m3u8
+ffmpeg -i npo1.mkv -c copy -f hls -hls_time 0 -hls_playlist_type vod /var/www/html/live/recordings/npo1/index.m3u8
